@@ -2589,7 +2589,7 @@ body {
 }
 
 /* ===================================================================
-   15. RESPONSIVE BREAKPOINTS
+   15. RESPONSIVE BREAKPOINTS (OPTIMIZED FOR ALL MOBILE DEVICES)
    =================================================================== */
 @media (max-width: 1100px) {
   .venue-showcase-grid {
@@ -2630,26 +2630,62 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Header adjustments */
   .institution-header {
-    padding: 0.75rem 0;
+    padding: 1.25rem 0 1.5rem;
   }
 
-  .header-container {
+  .header-container-centered {
+    padding: 0 1rem;
+    gap: 0.65rem;
+  }
+
+  .college-logo-img {
+    width: clamp(100px, 24vw, 130px);
+    max-height: 130px;
+  }
+
+  .title-with-pill-centered {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .institution-title-centered {
+    font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+    line-height: 1.25;
+  }
+
+  .autonomous-pill {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .institution-credentials-centered {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    padding: 0 0.5rem;
+  }
+
+  .institution-accreditations-centered {
+    gap: 0.5rem;
+  }
+
+  .accred-item {
+    padding: 4px 8px;
+  }
+
+  .accred-28 { height: 34px; }
+  .accred-naac { height: 32px; }
+  .accred-nba { height: 28px; }
+
+  /* Navbar */
+  .nav-container {
+    padding: 0.65rem 1rem;
     gap: 0.75rem;
   }
 
-  .institution-accreditations {
-    align-self: flex-start;
-  }
-
-  .institution-title {
-    font-size: 1rem;
-  }
-
-  .institution-credentials {
-    font-size: 0.72rem;
+  .nav-logo {
+    font-size: 1.35rem;
   }
 
   .nav-menu {
@@ -2660,14 +2696,15 @@ body {
     height: 100vh;
     background: rgba(3, 7, 18, 0.98);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: flex-start;
     padding: 5rem 2rem;
-    gap: 1.5rem;
+    gap: 1.25rem;
     border-left: 1px solid var(--border-glass);
     transition: right var(--transition-base);
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.8);
-    z-index: 90;
+    z-index: 1000;
   }
 
   .nav-menu.active {
@@ -2678,36 +2715,100 @@ body {
     display: flex;
   }
 
+  /* Hero */
+  .hero-section {
+    padding: 1.75rem 0 3rem 0;
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: clamp(2.35rem, 9.5vw, 3.25rem);
+    letter-spacing: -0.5px;
+  }
+
+  .hero-subcaption {
+    font-size: clamp(0.95rem, 3.6vw, 1.15rem);
+    padding: 0 0.75rem;
+  }
+
+  /* Partners */
+  .partners-wrapper {
+    padding: 1rem 0.85rem;
+  }
+
+  .partners-label {
+    font-size: 0.68rem;
+    letter-spacing: 1px;
+    padding: 0.2rem 0.8rem;
+  }
+
   .partners-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .hero-section {
-    padding: 2rem 0 3.5rem 0;
-    min-height: auto;
+  .partner-card {
+    padding: 0.9rem 0.75rem;
+    gap: 0.45rem;
   }
 
-  .hero-title {
-    font-size: 2.85rem;
+  .partner-logo-box {
+    max-width: 100%;
+    height: 58px;
+    padding: 6px 12px;
   }
 
+  .partner-name {
+    font-size: 0.95rem;
+  }
+
+  .partner-role {
+    font-size: 0.72rem;
+  }
+
+  /* Countdown */
   .countdown-wrapper {
-    padding: 1.5rem 1rem;
+    padding: 1.25rem 0.75rem;
+  }
+
+  .countdown-grid {
+    gap: 0.35rem;
   }
 
   .timer-unit-card {
-    padding: 0.75rem 0.25rem;
+    padding: 0.6rem 0.2rem;
+    min-width: 58px;
   }
 
   .timer-num {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
+  }
+
+  .timer-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.5px;
   }
 
   .timer-divider {
     font-size: 1.25rem;
   }
 
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem;
+    gap: 0.85rem;
+  }
+
+  .btn-hero-primary, .btn-hero-secondary {
+    width: 100%;
+    font-size: 0.88rem;
+    padding: 0.9rem 1.2rem;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Sections Grids */
   .details-grid {
     grid-template-columns: 1fr;
   }
@@ -2720,6 +2821,10 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .roadmap-grid {
+    grid-template-columns: 1fr;
+  }
+
   .workshop-banner {
     flex-direction: column;
     text-align: left;
@@ -2728,10 +2833,6 @@ body {
 
   .workshop-flair-left, .workshop-flair-right {
     display: none;
-  }
-
-  .roadmap-grid {
-    grid-template-columns: 1fr;
   }
 
   .venue-showcase-grid {
@@ -2746,7 +2847,7 @@ body {
   .cta-strip-card {
     flex-direction: column;
     text-align: center;
-    padding: 2.5rem 1.5rem;
+    padding: 2.25rem 1.25rem;
   }
 
   .cta-strip-content {
@@ -2754,44 +2855,45 @@ body {
     gap: 1rem;
   }
 
+  .cta-strip-action {
+    width: 100%;
+  }
+
+  .btn-strip-register {
+    width: 100%;
+    justify-content: center;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-
-  .form-row {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-
-  .modal-window {
-    margin: 0;
-    max-height: 95vh;
-    border-radius: var(--radius-lg);
-  }
-
-  .modal-header {
-    padding: 1.25rem 1.5rem;
-  }
-
-  .modal-body {
-    padding: 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
-  .hero-cta-group {
-    flex-direction: column;
-    width: 100%;
+  .section-container {
+    padding: 0 1rem;
   }
 
-  .btn-hero-primary, .btn-hero-secondary {
-    width: 100%;
-    text-align: center;
+  .section-heading {
+    font-size: 1.65rem;
   }
 
-  .view-poster-trigger {
-    display: none;
+  .timer-unit-card {
+    padding: 0.45rem 0.15rem;
+    min-width: 50px;
+  }
+
+  .timer-num {
+    font-size: 1.35rem;
+  }
+
+  .timer-label {
+    font-size: 0.58rem;
+  }
+
+  .timer-divider {
+    font-size: 1rem;
   }
 
   .video-floating-bar {
