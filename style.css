@@ -554,14 +554,16 @@ body {
   justify-content: center;
   text-align: center;
   gap: 0.6rem;
+  text-decoration: none;
+  cursor: pointer;
   transition: all var(--transition-base);
 }
 
 .partner-card:hover {
-  background: rgba(15, 43, 92, 0.65);
-  border-color: rgba(244, 196, 48, 0.5);
+  background: rgba(15, 43, 92, 0.75);
+  border-color: rgba(244, 196, 48, 0.6);
   transform: translateY(-4px);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 15px rgba(244, 196, 48, 0.2);
 }
 
 .partner-logo-box {
@@ -605,6 +607,25 @@ body {
   color: var(--text-white);
   letter-spacing: 0.3px;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color var(--transition-fast);
+}
+
+.partner-card:hover .partner-name {
+  color: var(--color-gold-bright);
+}
+
+.partner-ext-icon {
+  opacity: 0.6;
+  color: var(--color-gold);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.partner-card:hover .partner-ext-icon {
+  opacity: 1;
+  transform: translate(2px, -2px);
 }
 
 .partner-role {
@@ -1618,15 +1639,17 @@ body {
   z-index: 2;
 }
 
-.venue-showcase-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.15fr 1fr;
-  gap: 1.5rem;
-  align-items: stretch;
+.venue-showcase-centered {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-/* 1. Real Building Photo Card */
+/* Centered Building Photo Card */
 .venue-building-card {
+  width: 100%;
+  max-width: 720px;
   background: var(--bg-glass-card);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-xl);
@@ -1634,20 +1657,21 @@ body {
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-md);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-lg);
   transition: all var(--transition-base);
 }
 
 .venue-building-card:hover {
   border-color: rgba(244, 196, 48, 0.4);
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.7);
 }
 
 .building-img-container {
   position: relative;
   width: 100%;
-  height: 220px;
+  height: clamp(260px, 42vw, 420px);
   overflow: hidden;
   cursor: pointer;
   background: #061224;
@@ -1661,19 +1685,19 @@ body {
 }
 
 .building-img-container:hover .building-photo {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .building-badge-overlay {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 14px;
+  left: 14px;
   background: rgba(3, 7, 18, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(6px);
-  padding: 0.3rem 0.75rem;
+  padding: 0.35rem 0.85rem;
   border-radius: var(--radius-pill);
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.5px;
   color: var(--text-white);
@@ -1684,13 +1708,13 @@ body {
 
 .photo-zoom-hint {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 12px;
+  right: 12px;
   background: rgba(10, 25, 47, 0.85);
   border: 1px solid var(--border-glass);
   border-radius: var(--radius-pill);
-  padding: 0.25rem 0.65rem;
-  font-size: 0.72rem;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.75rem;
   color: var(--color-gold);
   display: flex;
   align-items: center;
@@ -1699,30 +1723,17 @@ body {
 }
 
 .building-details {
-  padding: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  flex-grow: 1;
+  padding: 1.25rem 1.5rem;
+  text-align: center;
+  background: rgba(3, 7, 18, 0.55);
 }
 
 .building-title {
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-white);
-  margin-bottom: 0.4rem;
-}
-
-.building-sub {
-  font-size: 0.85rem;
-  color: var(--text-gray-300);
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
-}
-
-.campus-tour-btn {
-  width: 100%;
+  letter-spacing: 0.3px;
 }
 
 /* 2. Venue Details Card */
