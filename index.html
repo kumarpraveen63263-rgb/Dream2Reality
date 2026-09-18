@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dream2Reality | Student Innovation &amp; Funding Support Competition - S.A. Engineering College</title>
+  <meta name="description" content="Dream2Reality is a prestigious CSR-funded Student Innovation Competition organized by S.A. Engineering College in partnership with Atlas Copco Group, TRIDENT, and PSG STEP. Turn your idea into impact on October 6, 2026.">
+  <meta name="keywords" content="Dream2Reality, S.A. Engineering College, SAEC, Student Innovation, CSR Funding, Atlas Copco, TRIDENT, PSG STEP, Hackathon, Pitch Competition, Chennai, ECE Seminar Hall">
+  <meta name="theme-color" content="#0a192f">
+  
+  <!-- Favicon using official SAEC logo -->
+  <link rel="icon" type="image/png" href="clg/SAECLOGO.png">
+
+  <!-- Google Fonts: Inter & Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===================================================================
+       NATURAL SAEC CAMPUS DRONE VIDEO BACKGROUND (Matches SAEC Official Site)
+       =================================================================== -->
+  <div class="campus-video-viewport-bg" aria-hidden="true">
+    <video 
+      id="heroBgVideo" 
+      src="Background/saec-intro.mp4"
+      poster="clg/campus-drone.jpg" 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      webkit-playsinline 
+      preload="auto" 
+      class="campus-bg-video">
+      <source src="Background/saec-intro.mp4" type="video/mp4">
+      <source src="Background/ban-vid%20(1).mp4" type="video/mp4">
+    </video>
+    <!-- Natural gradient: transparent in the center so the live campus is 100% visible, smoothly fading into the content below -->
+    <div class="campus-bg-video-overlay"></div>
+  </div>
+
+  <!-- Ambient Interactive Constellation Canvas (subtle particles) -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===================================================================
+       1. MAIN NAVIGATION (STICKY AT VERY TOP)
+       =================================================================== -->
+  <nav class="main-navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" title="Dream2Reality Homepage">
+        <span class="logo-dream">Dream</span><span class="logo-two">2</span><span class="logo-reality">Reality</span>
+      </a>
+
+      <!-- Desktop Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">Partners</a></li>
+        <li><a href="#details" class="nav-link">Event Details</a></li>
+        <li><a href="#benefits" class="nav-link">Benefits</a></li>
+        <li><a href="#workshop" class="nav-link">Workshop</a></li>
+        <li><a href="#timeline" class="nav-link">Stages</a></li>
+        <li><a href="#venue" class="nav-link">Venue &amp; Campus</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button type="button" class="btn-primary-sm register-trigger-btn" onclick="openRegistrationModal()">
+          <span>Register Now</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </button>
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===================================================================
+       2. INSTITUTION BRANDING HEADER (CENTERED COLLEGE LOGO & DETAILS BELOW)
+       =================================================================== -->
+  <header class="institution-header">
+    <div class="header-container-centered">
+      <!-- College Logo Centered -->
+      <a href="#hero" class="college-logo-anchor-centered" title="S.A. Engineering College Home">
+        <div class="college-logo-wrap-centered">
+          <img src="logo/saec-logo.png" alt="S.A. Engineering College" class="college-logo-img">
+        </div>
+      </a>
+
+      <!-- College Name and Subtitle Below Logo -->
+      <div class="institution-info-centered">
+        <div class="title-with-pill-centered">
+          <h1 class="institution-title-centered">S.A. ENGINEERING COLLEGE</h1>
+          <span class="autonomous-pill">AUTONOMOUS</span>
+        </div>
+        <p class="institution-credentials-centered">
+          Institute Level Research Centre &bull; Affiliated to Anna University, Chennai &bull; Accredited by NAAC &lsquo;A&rsquo; Grade, NBA &amp; ISO 9001:2015 Certified
+        </p>
+      </div>
+
+      <!-- Accreditations & Milestones Badges Centered Below -->
+      <div class="institution-accreditations-centered">
+        <div class="accred-item" title="28 Years of Academic Excellence (Since 1998)">
+          <img src="clg/28.png" alt="28 Years of Excellence" class="accred-img accred-28">
+        </div>
+        <div class="accred-item" title="Accredited with Grade 'A' by NAAC">
+          <img src="clg/naac.png" alt="NAAC Grade A" class="accred-img accred-naac">
+        </div>
+        <div class="accred-item" title="National Board of Accreditation">
+          <img src="clg/nba.png" alt="NBA Accredited" class="accred-img accred-nba">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================================================================
+         3. HERO SECTION (DREAM2REALITY CONTENT FIRST)
+         =================================================================== -->
+    <section class="hero-section" id="hero">
+      <!-- Floating Paper Airplane & Glowing Lightbulb Shapes -->
+      <div class="hero-bg-shapes">
+        <div class="airplane-float" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12l20-9-9 20-2-8-9-3z"/>
+            <path d="M13 13L22 3" stroke-dasharray="2 2"/>
+          </svg>
+        </div>
+        <div class="lightbulb-glow" aria-hidden="true">
+          <svg width="74" height="74" viewBox="0 0 24 24" fill="none" stroke="#f4c430" stroke-width="1.8">
+            <path d="M9 18h6m-4 3h2" stroke-linecap="round"/>
+            <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z" fill="rgba(244, 196, 48, 0.2)"/>
+            <circle cx="12" cy="9" r="2" fill="#ffb703"/>
+            <line x1="12" y1="11" x2="12" y2="15" stroke="#f4c430"/>
+          </svg>
+        </div>
+      </div>
+
+      <div class="section-container hero-container">
+        <!-- Main Title with Distinctive Brand Font -->
+        <h1 class="hero-title">
+          Dream<span class="title-accent">2</span>Reality
+        </h1>
+        
+        <p class="hero-subcaption">
+          Funding Support for Student Innovation Competition &mdash; A CSR Initiative
+        </p>
+
+        <!-- PRESENTED AS A CSR INITIATIVE BY (PARTNERS STRIP) -->
+        <div class="hero-partners-wrap" id="about">
+          <div class="partners-wrapper">
+            <div class="partners-label-wrap">
+              <span class="partners-label">PRESENTED AS A CSR INITIATIVE BY</span>
+              <div class="label-line"></div>
+            </div>
+            <div class="partners-grid">
+              <!-- Atlas Copco Group -->
+              <div class="partner-card">
+                <div class="partner-logo-box">
+                  <img src="partners/atlas.png" alt="Atlas Copco Group" class="partner-logo-img">
+                </div>
+                <div class="partner-meta">
+                  <h4 class="partner-name">Atlas Copco Group</h4>
+                  <span class="partner-role">Corporate CSR Partner</span>
+                </div>
+              </div>
+
+              <!-- TRIDENT -->
+              <div class="partner-card">
+                <div class="partner-logo-box">
+                  <img src="partners/trudent.jpg" alt="TRIDENT" class="partner-logo-img">
+                </div>
+                <div class="partner-meta">
+                  <h4 class="partner-name">TRIDENT</h4>
+                  <span class="partner-role">CSR Industry Partner</span>
+                </div>
+              </div>
+
+              <!-- PSG STEP -->
+              <div class="partner-card">
+                <div class="partner-logo-box">
+                  <img src="partners/psg.jpg" alt="PSG STEP" class="partner-logo-img">
+                </div>
+                <div class="partner-meta">
+                  <h4 class="partner-name">PSG STEP</h4>
+                  <span class="partner-role">Incubation &amp; Technology Partner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slogan Banner -->
+        <div class="hero-slogan-wrap">
+          <div class="slogan-badge-rot">
+            <span class="slogan-quote">Turn Your <span class="highlight-idea">IDEA</span> Into Impact!</span>
+          </div>
+          <p class="hero-tagline">
+            <span class="tagline-star">&starf;</span>
+            Innovate Today, Inspire Tomorrow!
+            <span class="tagline-star">&starf;</span>
+          </p>
+        </div>
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="countdown-wrapper">
+          <div class="countdown-header">
+            <span class="timer-live-badge"><span class="ping-dot"></span> GRAND FINALE COUNTDOWN</span>
+            <span class="timer-target">Tuesday, 6th October 2026 &bull; 09:30 AM IST</span>
+          </div>
+
+          <div class="countdown-grid" id="countdownGrid">
+            <div class="timer-unit-card">
+              <div class="timer-num" id="cdDays">--</div>
+              <div class="timer-label">DAYS</div>
+              <div class="timer-bar"><div class="timer-fill" id="barDays" style="width: 75%;"></div></div>
+            </div>
+            <div class="timer-divider">:</div>
+            <div class="timer-unit-card">
+              <div class="timer-num" id="cdHours">--</div>
+              <div class="timer-label">HOURS</div>
+              <div class="timer-bar"><div class="timer-fill" id="barHours" style="width: 50%;"></div></div>
+            </div>
+            <div class="timer-divider">:</div>
+            <div class="timer-unit-card">
+              <div class="timer-num" id="cdMins">--</div>
+              <div class="timer-label">MINUTES</div>
+              <div class="timer-bar"><div class="timer-fill" id="barMins" style="width: 60%;"></div></div>
+            </div>
+            <div class="timer-divider">:</div>
+            <div class="timer-unit-card">
+              <div class="timer-num" id="cdSecs">--</div>
+              <div class="timer-label">SECONDS</div>
+              <div class="timer-bar"><div class="timer-fill" id="barSecs" style="width: 40%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero CTAs -->
+        <div class="hero-cta-group">
+          <button type="button" class="btn-hero-primary register-trigger-btn" onclick="openRegistrationModal()">
+            <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M22 2L11 13"/>
+              <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+            </svg>
+            <span>BE PART OF DREAM2REALITY &mdash; REGISTER NOW</span>
+          </button>
+
+          <button type="button" class="btn-hero-secondary" onclick="openPosterModal()">
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <circle cx="8.5" cy="8.5" r="1.5"></circle>
+              <polyline points="21 15 16 10 5 21"></polyline>
+            </svg>
+            <span>View Official Flyer</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK EVENT DETAILS CARDS -->
+    <section class="details-section" id="details">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="pill-title">
+            <span class="flair-lines">&minus;&minus;</span>
+            <span>EVENT DETAILS</span>
+            <span class="flair-lines">&minus;&minus;</span>
+          </div>
+          <h2 class="section-heading">Everything You Need To Know</h2>
+          <p class="section-subheading">Mark your schedules, gather your team, and step onto the stage of innovation.</p>
+        </div>
+
+        <div class="details-grid">
+          <!-- 1. DATE -->
+          <div class="info-card">
+            <div class="info-card-icon date-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+                <circle cx="8" cy="14" r="1.5" fill="#d90429"></circle>
+                <circle cx="12" cy="14" r="1.5" fill="#d90429"></circle>
+                <circle cx="16" cy="14" r="1.5" fill="#d90429"></circle>
+                <circle cx="8" cy="18" r="1.5" fill="#d90429"></circle>
+                <circle cx="12" cy="18" r="1.5" fill="#d90429"></circle>
+                <circle cx="16" cy="18" r="1.5" fill="#d90429"></circle>
+              </svg>
+            </div>
+            <div class="info-card-content">
+              <span class="info-card-label">DATE</span>
+              <h3 class="info-card-main">Tuesday</h3>
+              <p class="info-card-sub">6th October 2026</p>
+            </div>
+            <div class="info-card-accent"></div>
+          </div>
+
+          <!-- 2. TIME -->
+          <div class="info-card">
+            <div class="info-card-icon time-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <div class="info-card-content">
+              <span class="info-card-label">TIME</span>
+              <h3 class="info-card-main">09:30 AM</h3>
+              <p class="info-card-sub">Onwards (Full Day Event)</p>
+            </div>
+            <div class="info-card-accent"></div>
+          </div>
+
+          <!-- 3. VENUE -->
+          <div class="info-card">
+            <div class="info-card-icon venue-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00875a" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3" fill="#00875a"></circle>
+              </svg>
+            </div>
+            <div class="info-card-content">
+              <span class="info-card-label">VENUE</span>
+              <h3 class="info-card-main">ECE Seminar Hall</h3>
+              <p class="info-card-sub">ECE Block, S.A. Engineering College</p>
+            </div>
+            <div class="info-card-accent"></div>
+          </div>
+
+          <!-- 4. WHO CAN PARTICIPATE -->
+          <div class="info-card">
+            <div class="info-card-icon participant-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="info-card-content">
+              <span class="info-card-label">WHO CAN PARTICIPATE?</span>
+              <h3 class="info-card-main">Engineering Students</h3>
+              <p class="info-card-sub">Pre-final and Final Year cohorts</p>
+            </div>
+            <div class="info-card-accent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY BENEFITS & HIGHLIGHTS -->
+    <section class="benefits-section" id="benefits">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="pill-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffb703"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <span>OPPORTUNITY ACCELERATOR</span>
+          </div>
+          <h2 class="section-heading">Why You Should Compete</h2>
+          <p class="section-subheading">Dream2Reality bridges the gap between raw academic ideas and real-world commercial impact through direct CSR backing.</p>
+        </div>
+
+        <div class="benefits-grid">
+          <!-- 1. Expert Mentorship -->
+          <div class="benefit-card tilt-card">
+            <div class="benefit-glow"></div>
+            <div class="benefit-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f4c430" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <span class="benefit-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="benefit-title">Get Expert Mentorship</h3>
+            <p class="benefit-desc">
+              Receive 1-on-1 guidance from seasoned industrial engineering practitioners, senior research faculty, and innovation mentors.
+            </p>
+            <ul class="benefit-points">
+              <li>Technical feasibility review</li>
+              <li>Pitch deck refinement</li>
+              <li>IP &amp; patent coaching</li>
+            </ul>
+          </div>
+
+          <!-- 2. Validate your idea -->
+          <div class="benefit-card tilt-card">
+            <div class="benefit-glow"></div>
+            <div class="benefit-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+              <span class="benefit-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="benefit-title">Validate Your Idea</h3>
+            <p class="benefit-desc">
+              Put your engineering designs and assumptions to the test through structured rubrics, customer discovery, and rapid prototyping.
+            </p>
+            <ul class="benefit-points">
+              <li>Product-market fit stress testing</li>
+              <li>Proof-of-concept audit</li>
+              <li>Actionable jury feedback</li>
+            </ul>
+          </div>
+
+          <!-- 3. Win exciting awards -->
+          <div class="benefit-card tilt-card highlight-benefit">
+            <div class="benefit-glow"></div>
+            <div class="benefit-icon-box award-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2">
+                <circle cx="12" cy="8" r="7"/>
+                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+              </svg>
+              <span class="benefit-check red-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+            </div>
+            <div class="corner-ribbon">CSR FUNDED</div>
+            <h3 class="benefit-title">Win Exciting Cash Awards</h3>
+            <p class="benefit-desc">
+              Compete for generous CSR-sponsored funding grants, seed capital checks, and trophy recognitions to propel your prototype.
+            </p>
+            <ul class="benefit-points">
+              <li>Direct project funding grant</li>
+              <li>Merit certificates &amp; trophies</li>
+              <li>Hardware component reimbursement</li>
+            </ul>
+          </div>
+
+          <!-- 4. Regional & State Levels -->
+          <div class="benefit-card tilt-card">
+            <div class="benefit-glow"></div>
+            <div class="benefit-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span class="benefit-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="benefit-title">Compete at Regional &amp; State Levels</h3>
+            <p class="benefit-desc">
+              Top teams get fast-tracked to represent S.A. Engineering College at elite inter-collegiate and national level hackathons.
+            </p>
+            <ul class="benefit-points">
+              <li>Statewide tech showcase</li>
+              <li>Press and media visibility</li>
+              <li>Network with fellow innovators</li>
+            </ul>
+          </div>
+
+          <!-- 5. Incubation & commercialization -->
+          <div class="benefit-card tilt-card">
+            <div class="benefit-glow"></div>
+            <div class="benefit-icon-box">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                <path d="M12 9V4s3.03.55 4 2c1.08 1.62 0 5 0 5"/>
+              </svg>
+              <span class="benefit-check">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+            </div>
+            <h3 class="benefit-title">Incubation &amp; Commercialization</h3>
+            <p class="benefit-desc">
+              Direct connection with PSG STEP and S.A.E.C. Research Center to turn your academic project into a venture-backed startup.
+            </p>
+            <ul class="benefit-points">
+              <li>Co-working space access</li>
+              <li>Seed investment avenues</li>
+              <li>Company incorporation support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPECIAL WORKSHOP FEATURE BANNER -->
+    <section class="workshop-section" id="workshop">
+      <div class="section-container">
+        <div class="workshop-banner">
+          <div class="workshop-flair-left">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+              <line x1="4" y1="4" x2="8" y2="8"/>
+              <line x1="2" y1="12" x2="8" y2="12"/>
+              <line x1="4" y1="20" x2="8" y2="16"/>
+            </svg>
+          </div>
+
+          <div class="workshop-content">
+            <div class="workshop-header-pill">
+              <span class="pulse-indicator"></span>
+              <span class="pill-text">SPECIAL PRE-COMPETITION SESSION</span>
+            </div>
+
+            <div class="workshop-title-box">
+              <div class="workshop-calendar-icon">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/>
+                  <line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                  <rect x="7" y="14" width="3" height="3" fill="#10b981"/>
+                  <rect x="14" y="14" width="3" height="3" fill="#10b981"/>
+                </svg>
+              </div>
+              <div class="workshop-title-text">
+                <h3 class="workshop-badge-label">IDEA VALIDATION WORKSHOP</h3>
+                <p class="workshop-date-highlight">Wednesday, 16th September 2026</p>
+              </div>
+            </div>
+
+            <p class="workshop-description">
+              A hands-on preparatory bootcamp designed to help student teams dissect their problem statements, refine their pitch decks, validate prototype viability, and prepare for the final grand jury evaluation.
+            </p>
+
+            <div class="workshop-features">
+              <span class="feat-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Pitch Deck Structure
+              </span>
+              <span class="feat-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Mock Pitching &amp; Q&amp;A
+              </span>
+              <span class="feat-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Industry Mentor Clinics
+              </span>
+            </div>
+          </div>
+
+          <div class="workshop-flair-right">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+              <line x1="20" y1="4" x2="16" y2="8"/>
+              <line x1="22" y1="12" x2="16" y2="12"/>
+              <line x1="20" y1="20" x2="16" y2="16"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPETITION ROADMAP & STAGES -->
+    <section class="timeline-section" id="timeline">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="pill-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 14 14"/></svg>
+            <span>JOURNEY TO REALITY</span>
+          </div>
+          <h2 class="section-heading">Stages of the Competition</h2>
+          <p class="section-subheading">From raw idea to funded prototype: navigate through the structured phases.</p>
+        </div>
+
+        <div class="roadmap-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <div class="step-badge">Phase 1</div>
+            <h3 class="step-title">Online Idea Submission</h3>
+            <p class="step-desc">Register your team, select your technology track, and submit a brief 2-page executive summary or PPT describing the problem and solution.</p>
+            <span class="step-timing">Now Open</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <div class="step-badge emerald-badge">Phase 2</div>
+            <h3 class="step-title">Idea Validation Workshop</h3>
+            <p class="step-desc">Shortlisted teams attend the dedicated mentorship clinic to sharpen technical architecture and business feasibility.</p>
+            <span class="step-timing">Wed, 16 Sep 2026</span>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <div class="step-badge">Phase 3</div>
+            <h3 class="step-title">Prototype Refinement</h3>
+            <p class="step-desc">Teams build, simulate, or refine their working prototypes with access to campus lab equipment and faculty advisement.</p>
+            <span class="step-timing">Mid-September 2026</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card highlight-step">
+            <div class="step-number red-number">04</div>
+            <div class="step-badge red-badge">Grand Finale</div>
+            <h3 class="step-title">Live Pitch &amp; Awards</h3>
+            <p class="step-desc">Present live before corporate jurors from Atlas Copco, TRIDENT, and PSG STEP at the ECE Seminar Hall to win funding grants.</p>
+            <span class="step-timing highlight-timing">Tue, 6 Oct 2026 &bull; 09:30 AM</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENUE & CAMPUS SPOTLIGHT SECTION (ECE BLOCK PHOTO & MAP) -->
+    <section class="venue-section" id="venue">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="pill-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="#d90429"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3" fill="#ffffff"/></svg>
+            <span>CAMPUS &amp; VENUE SPOTLIGHT</span>
+          </div>
+          <h2 class="section-heading">Event Location &amp; Campus Tour</h2>
+          <p class="section-subheading">Hosted at the prestigious ECE Block auditorium of S.A. Engineering College, Chennai.</p>
+        </div>
+
+        <!-- Triple Grid: Building Photo | Venue Details | Google Maps -->
+        <div class="venue-showcase-grid">
+          <!-- 1. Real ECE Block Building Photo -->
+          <div class="venue-building-card">
+            <div class="building-img-container" onclick="openPhotoZoomModal()">
+              <img src="clg/sa2.png" alt="ECE Block S.A. Engineering College" class="building-photo">
+              <div class="building-badge-overlay">
+                <span class="pulse-dot"></span>
+                <span>ECE BLOCK &bull; SEMINAR HALL</span>
+              </div>
+              <div class="photo-zoom-hint">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                <span>Click to Expand View</span>
+              </div>
+            </div>
+            <div class="building-details">
+              <h3 class="building-title">ECE Block Entrance &amp; Facilities</h3>
+              <p class="building-sub">The state-of-the-art academic block housing the ECE Seminar Hall, research labs, and conference facilities.</p>
+              <button type="button" class="btn-secondary-sm campus-tour-btn" onclick="openCampusVideoModal()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                <span>Watch Campus Video Tour</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 2. Venue Specifics Card -->
+          <div class="venue-details-card">
+            <div class="venue-card-header">
+              <h3 class="venue-heading">ECE Seminar Hall</h3>
+              <p class="venue-subheading">S.A. Engineering College (Autonomous)</p>
+            </div>
+
+            <div class="venue-address-box">
+              <div class="address-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2">
+                  <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="address-text">
+                <strong>Campus Address:</strong><br>
+                Poonamallee - Avadi Road, Veeraraghavapuram,<br>
+                Thiruverkadu Post, Chennai, Tamil Nadu &mdash; 600077.<br>
+                Landmark: Near Thiruverkadu Devi Karumariamman Temple
+              </div>
+            </div>
+
+            <div class="venue-meta-grid">
+              <div class="meta-item">
+                <span class="meta-title">Hall Capacity</span>
+                <span class="meta-val">250+ Seats &bull; Full AV</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-title">Reporting Time</span>
+                <span class="meta-val">09:00 AM Registration</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-title">Transport</span>
+                <span class="meta-val">College Buses &amp; MTC</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-title">Check-in</span>
+                <span class="meta-val">ECE Block Ground Floor</span>
+              </div>
+            </div>
+
+            <div class="venue-actions">
+              <a href="https://maps.google.com/?q=S.A.+Engineering+College+Chennai" target="_blank" rel="noopener noreferrer" class="btn-primary-sm">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+                </svg>
+                <span>Google Maps Directions</span>
+              </a>
+              <button type="button" class="btn-secondary-sm" onclick="openPosterModal()">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+                <span>View Event Poster</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- 3. Embedded Google Maps -->
+          <div class="venue-map-card">
+            <div class="map-container">
+              <iframe 
+                title="S.A. Engineering College Location Map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3886.082003788229!2d80.09849207579123!3d13.093999987232777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526227b6ff2f73%3A0x6b306155998a4422!2sS.A.%20Engineering%20College!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+              <div class="map-overlay-badge">
+                <span class="pulse-dot"></span> S.A. Engineering College Campus
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section" id="faq">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="pill-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+            <span>STUDENT CLARIFICATIONS</span>
+          </div>
+          <h2 class="section-heading">Frequently Asked Questions</h2>
+          <p class="section-subheading">Common questions about team sizes, domains, funding scope, and prerequisites.</p>
+        </div>
+
+        <div class="faq-accordion" id="faqAccordion">
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Who is eligible to participate in Dream2Reality?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>The competition is exclusively open to <strong>Pre-final and Final Year Engineering students</strong> across all engineering streams. Interdisciplinary teams combining different departments are strongly encouraged.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What is the team size requirement?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Teams can consist of <strong>2 to 4 members</strong>. Individual entries are also accepted, but collaborating as a multidisciplinary team is recommended for better project execution.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Is there any registration fee to participate?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p><strong>No!</strong> Dream2Reality is fully sponsored as a Corporate Social Responsibility (CSR) initiative by Atlas Copco Group and TRIDENT, supported by PSG STEP. Participation, mentoring, and workshops are completely free of charge.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What project domains and themes are welcomed?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Projects across Artificial Intelligence, Robotics &amp; Automation, Clean Energy, Internet of Things (IoT), Healthcare &amp; Assistive Tech, Smart Manufacturing, and Open Track social impact innovations are all welcome.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What is the Idea Validation Workshop?</span>
+              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Held on <strong>Wednesday, 16th September 2026</strong>, this dedicated preparatory session allows teams to consult directly with industry specialists to polish their ideas, validate their tech stack, and structure their pitch slides prior to the Grand Finale.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA STRIP -->
+    <section class="cta-strip-section">
+      <div class="section-container">
+        <div class="cta-strip-card">
+          <div class="cta-strip-content">
+            <div class="megaphone-icon-wrap">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#f4c430" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+                <path d="M2 8l4-4 4 4"/>
+              </svg>
+            </div>
+            <div class="cta-strip-text">
+              <h2 class="cta-strip-title">BE PART OF DREAM2REALITY!</h2>
+              <p class="cta-strip-subtitle">Innovate Today, Inspire Tomorrow &bull; Turn Your Academic Passion Into Funded Reality</p>
+            </div>
+          </div>
+          <div class="cta-strip-action">
+            <button type="button" class="btn-strip-register register-trigger-btn" onclick="openRegistrationModal()">
+              <span>REGISTER NOW</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER WITH ACCREDITATION BADGES -->
+  <footer class="main-footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <div class="footer-brand-header">
+            <img src="clg/SAECLOGO.png" alt="SAEC Logo" class="footer-logo-img">
+            <div class="footer-logo">
+              <span class="logo-dream">Dream</span><span class="logo-two">2</span><span class="logo-reality">Reality</span>
+            </div>
+          </div>
+          <p class="footer-about">
+            A premier CSR-funded Student Innovation &amp; Funding Support Competition by S.A. Engineering College (Autonomous) in association with Atlas Copco Group, TRIDENT, and PSG STEP.
+          </p>
+          <div class="footer-tags">
+            <span class="ftag">#Dream2Reality</span>
+            <span class="ftag">#SAEC</span>
+            <span class="ftag">#InnovationFund</span>
+            <span class="ftag">#28YearsExcellence</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Grand Finale Countdown</a></li>
+            <li><a href="#details">Event Specifications</a></li>
+            <li><a href="#benefits">Award Benefits &amp; Grants</a></li>
+            <li><a href="#workshop">Idea Validation Workshop</a></li>
+            <li><a href="#venue">ECE Block &amp; Campus Map</a></li>
+            <li><a href="javascript:void(0)" onclick="openCampusVideoModal()">Watch Campus Video Tour</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Partners</h4>
+          <ul class="footer-links">
+            <li><strong>Atlas Copco Group</strong> (CSR Sponsor)</li>
+            <li><strong>TRIDENT</strong> (Industry Sponsor)</li>
+            <li><strong>PSG STEP</strong> (Incubation Partner)</li>
+            <li><strong>S.A. Engineering College</strong> (Host)</li>
+          </ul>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4 class="footer-heading">Contact &amp; Coordination</h4>
+          <p class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>ECE Department, SAEC, Chennai - 600077</span>
+          </p>
+          <p class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>dream2reality@saec.ac.in</span>
+          </p>
+          <p class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+91 44 2680 1999 / Ext. 214</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 S.A. Engineering College (Autonomous). All Rights Reserved. Dream2Reality is a registered CSR Innovation Initiative.</p>
+        <div class="footer-badges">
+          <img src="clg/28.png" alt="28 Years Excellence" class="footer-accred-badge" title="28 Years of Academic Excellence">
+          <img src="clg/naac.png" alt="NAAC Grade A" class="footer-accred-badge" title="Accredited by NAAC with Grade A">
+          <img src="clg/nba.png" alt="NBA Accredited" class="footer-accred-badge" title="National Board of Accreditation">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== REGISTRATION MODAL ==================== -->
+  <div class="modal-overlay" id="registrationModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeRegistrationModal()"></div>
+    <div class="modal-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-kicker">CSR FUNDED INNOVATION COMPETITION</span>
+          <h2 class="modal-title">Register for Dream2Reality</h2>
+          <p class="modal-desc">Fill in your team credentials to submit your idea for jury screening.</p>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeRegistrationModal()" aria-label="Close modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="registrationForm" onsubmit="handleRegistrationSubmit(event)">
+          <!-- Auto-save notification -->
+          <div class="draft-indicator" id="draftIndicator">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            <span>Form progress auto-saved locally</span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="teamLeadName">Team Leader / Participant Name <span class="req">*</span></label>
+              <input type="text" id="teamLeadName" name="teamLeadName" required placeholder="e.g. Arun Kumar" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="teamEmail">Email Address (College / Personal) <span class="req">*</span></label>
+              <input type="email" id="teamEmail" name="teamEmail" required placeholder="e.g. arun.k@saec.ac.in" autocomplete="email">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phoneNum">Contact / WhatsApp Number <span class="req">*</span></label>
+              <input type="tel" id="phoneNum" name="phoneNum" required placeholder="e.g. +91 98765 43210" pattern="[0-9+ -]{10,15}">
+            </div>
+            <div class="form-group">
+              <label for="teamSize">Team Size <span class="req">*</span></label>
+              <select id="teamSize" name="teamSize" required>
+                <option value="1">1 (Individual Participant)</option>
+                <option value="2" selected>2 Members</option>
+                <option value="3">3 Members</option>
+                <option value="4">4 Members (Maximum)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="college">Institution / College Name <span class="req">*</span></label>
+              <input type="text" id="college" name="college" required value="S.A. Engineering College" placeholder="Enter your institution">
+            </div>
+            <div class="form-group">
+              <label for="department">Department &amp; Year of Study <span class="req">*</span></label>
+              <select id="department" name="department" required>
+                <option value="" disabled selected>Select Year &amp; Department</option>
+                <option value="3rd-ECE">3rd Year (Pre-final) - ECE</option>
+                <option value="4th-ECE">4th Year (Final Year) - ECE</option>
+                <option value="3rd-CSE">3rd Year (Pre-final) - CSE / IT / AI&amp;DS</option>
+                <option value="4th-CSE">4th Year (Final Year) - CSE / IT / AI&amp;DS</option>
+                <option value="3rd-MECH">3rd Year (Pre-final) - Mech / Mechatronics</option>
+                <option value="4th-MECH">4th Year (Final Year) - Mech / Mechatronics</option>
+                <option value="3rd-EEE">3rd Year (Pre-final) - EEE</option>
+                <option value="4th-EEE">4th Year (Final Year) - EEE</option>
+                <option value="3rd-CIVIL">3rd Year (Pre-final) - Civil</option>
+                <option value="4th-CIVIL">4th Year (Final Year) - Civil</option>
+                <option value="other">Other Engineering Department</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="projectTitle">Project / Innovation Title <span class="req">*</span></label>
+            <input type="text" id="projectTitle" name="projectTitle" required placeholder="e.g. Smart IoT-Based Water Purification Sensor Grid">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="domain">Innovation Track / Domain <span class="req">*</span></label>
+              <select id="domain" name="domain" required>
+                <option value="ai-ml">Artificial Intelligence &amp; Data Science</option>
+                <option value="iot-robotics">IoT, Robotics &amp; Automation</option>
+                <option value="clean-energy">Clean Tech &amp; Sustainable Energy</option>
+                <option value="healthcare">Healthcare &amp; Assistive Tech</option>
+                <option value="smart-mfg">Industry 4.0 &amp; Smart Manufacturing</option>
+                <option value="open">Open Innovation Track</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="prototypeStatus">Current Prototype Status <span class="req">*</span></label>
+              <select id="prototypeStatus" name="prototypeStatus" required>
+                <option value="idea">Conceptual Idea / Simulation</option>
+                <option value="poc" selected>Proof of Concept (POC) Built</option>
+                <option value="working">Working Hardware/Software Prototype</option>
+                <option value="advanced">Tested Prototype with Field Data</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="abstract">Brief Executive Abstract (150 - 300 words) <span class="req">*</span></label>
+            <textarea id="abstract" name="abstract" rows="4" required placeholder="Outline: 1) Problem statement, 2) Your proposed engineering solution, 3) Real-world impact and potential commercial feasibility."></textarea>
+          </div>
+
+          <div class="form-checkbox">
+            <input type="checkbox" id="consent" name="consent" required checked>
+            <label for="consent">I confirm that all team members are bona fide engineering students of the specified institution and the submitted concept represents original work.</label>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn-cancel" onclick="closeRegistrationModal()">Cancel</button>
+            <button type="submit" class="btn-submit" id="submitBtn">
+              <span>Submit Registration</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </div>
+        </form>
+
+        <!-- Success Screen -->
+        <div class="modal-success-screen" id="successScreen" style="display: none;">
+          <div class="success-icon-box">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3 class="success-title">Registration Confirmed!</h3>
+          <p class="success-msg">
+            Congratulations! Your idea <strong id="registeredTitle">Your Project</strong> has been successfully registered for <strong>Dream2Reality</strong>.
+          </p>
+          <div class="success-reg-id">
+            <span>Confirmation ID:</span>
+            <code id="regIdDisplay">D2R-2026-SAEC-784</code>
+          </div>
+          <div class="success-actions">
+            <button type="button" class="btn-primary-sm" onclick="addToCalendar()">Add Grand Finale to Calendar</button>
+            <button type="button" class="btn-secondary-sm" onclick="closeRegistrationModal()">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== OFFICIAL POSTER VIEWER MODAL ==================== -->
+  <div class="modal-overlay" id="posterModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closePosterModal()"></div>
+    <div class="modal-window poster-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-kicker">OFFICIAL EVENT FLYER</span>
+          <h2 class="modal-title">Dream2Reality Official Poster</h2>
+        </div>
+        <div class="poster-modal-actions">
+          <a href="clg/poster.jpeg" download="Dream2Reality-SAEC-Official-Poster.jpeg" class="btn-secondary-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download Poster</span>
+          </a>
+          <button type="button" class="modal-close-btn" onclick="closePosterModal()" aria-label="Close flyer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body poster-body">
+        <div class="poster-img-wrap">
+          <img src="clg/poster.jpeg" alt="Dream2Reality S.A. Engineering College Official Poster" class="poster-full-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== CAMPUS INTRO VIDEO MODAL ==================== -->
+  <div class="modal-overlay" id="campusVideoModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closeCampusVideoModal()"></div>
+    <div class="modal-window video-modal-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-kicker">CAMPUS &amp; INFRASTRUCTURE TOUR</span>
+          <h2 class="modal-title">S.A. Engineering College &mdash; Campus Tour</h2>
+          <p class="modal-desc">Explore our institute-level research facilities, ECE block auditorium, and innovation labs.</p>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeCampusVideoModal()" aria-label="Close Video Tour">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body video-modal-body">
+        <div class="video-player-wrapper">
+          <video id="modalVideoPlayer" controls playsinline poster="clg/sa2.png" class="modal-video-element">
+            <source src="Background/saec-intro.mp4" type="video/mp4">
+            <source src="Background/ban-vid%20(1).mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== PHOTO ZOOM MODAL (ECE BLOCK) ==================== -->
+  <div class="modal-overlay" id="photoZoomModal" aria-hidden="true">
+    <div class="modal-backdrop" onclick="closePhotoZoomModal()"></div>
+    <div class="modal-window poster-window">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <span class="modal-kicker">CAMPUS VENUE INFRASTRUCTURE</span>
+          <h2 class="modal-title">ECE Block &bull; S.A. Engineering College</h2>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closePhotoZoomModal()" aria-label="Close building view">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body poster-body">
+        <div class="poster-img-wrap">
+          <img src="clg/sa2.png" alt="ECE Block Campus View" class="poster-full-img">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification System -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
