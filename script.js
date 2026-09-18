@@ -508,25 +508,10 @@ function initDraftAutosave() {
   });
 }
 
+const GOOGLE_REGISTRATION_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc44ZBiN8AE_ZlQ-Z70_1OeTWqIRuYqx6yubgGWdtwPnJyOsA/viewform';
+
 window.openRegistrationModal = function () {
-  const modal = document.getElementById('registrationModal');
-  if (!modal) return;
-
-  // Reset to form if previously submitted
-  const form = document.getElementById('registrationForm');
-  const successScreen = document.getElementById('successScreen');
-  if (form) form.style.display = 'block';
-  if (successScreen) successScreen.style.display = 'none';
-
-  modal.classList.add('active');
-  modal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-
-  // Autofocus first input
-  setTimeout(() => {
-    const firstInput = document.getElementById('teamLeadName');
-    firstInput?.focus();
-  }, 100);
+  window.open(GOOGLE_REGISTRATION_FORM_URL, '_blank', 'noopener,noreferrer');
 };
 
 window.closeRegistrationModal = function () {

@@ -58,6 +58,7 @@
         <li><a href="#hero" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">Partners</a></li>
         <li><a href="#details" class="nav-link">Event Details</a></li>
+        <li><a href="#eligibility" class="nav-link">Eligibility</a></li>
         <li><a href="#benefits" class="nav-link">Benefits</a></li>
         <li><a href="#workshop" class="nav-link">Workshop</a></li>
         <li><a href="#timeline" class="nav-link">Stages</a></li>
@@ -67,13 +68,13 @@
 
       <!-- Nav Actions -->
       <div class="nav-actions">
-        <button type="button" class="btn-primary-sm register-trigger-btn" onclick="openRegistrationModal()">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc44ZBiN8AE_ZlQ-Z70_1OeTWqIRuYqx6yubgGWdtwPnJyOsA/viewform" target="_blank" rel="noopener noreferrer" class="btn-primary-sm register-trigger-btn" title="Event Registration (Google Form)">
           <span>Register Now</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
-        </button>
+        </a>
         <!-- Mobile Toggle Button -->
         <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Navigation">
           <span class="bar"></span>
@@ -247,13 +248,13 @@
 
         <!-- Hero CTAs -->
         <div class="hero-cta-group">
-          <button type="button" class="btn-hero-primary register-trigger-btn" onclick="openRegistrationModal()">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSc44ZBiN8AE_ZlQ-Z70_1OeTWqIRuYqx6yubgGWdtwPnJyOsA/viewform" target="_blank" rel="noopener noreferrer" class="btn-hero-primary register-trigger-btn" title="Event Registration (Google Form)">
             <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
               <path d="M22 2L11 13"/>
               <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
             </svg>
             <span>BE PART OF DREAM2REALITY &mdash; REGISTER NOW</span>
-          </button>
+          </a>
 
           <button type="button" class="btn-hero-secondary" onclick="openPosterModal()">
             <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -358,6 +359,115 @@
       </div>
     </section>
 
+    <!-- ===================================================================
+         ELIGIBILITY CRITERIA SECTION (OFFICIAL COMPETITION GUIDELINES)
+         =================================================================== -->
+    <section class="eligibility-section" id="eligibility">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="pill-title">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#f4c430" stroke-width="2.5">
+              <path d="M9 11l3 3L22 4"/>
+              <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+            <span>PARTICIPATION GUIDELINES</span>
+          </div>
+          <h2 class="section-heading">Eligibility Criteria</h2>
+          <p class="section-subheading">Review the mandatory qualifications and submission requirements before registering your team.</p>
+        </div>
+
+        <div class="eligibility-grid">
+          <!-- 1. Cohort -->
+          <div class="eligibility-card">
+            <div class="eligibility-icon-box blue-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+            </div>
+            <div class="eligibility-content">
+              <h3 class="eligibility-card-title">Eligible Cohorts</h3>
+              <p class="eligibility-card-desc">Students from <strong>pre-final and final year</strong> of engineering programs are eligible to participate.</p>
+            </div>
+          </div>
+
+          <!-- 2. Team Size & Diversity -->
+          <div class="eligibility-card highlight-eligibility">
+            <div class="eligibility-icon-box red-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <div class="eligibility-content">
+              <h3 class="eligibility-card-title">Team Composition</h3>
+              <p class="eligibility-card-desc">Maximum of <strong>4 members / team</strong>. Mandatory rule: <strong>One member should be a girl student</strong>.</p>
+            </div>
+          </div>
+
+          <!-- 3. Problem Focus -->
+          <div class="eligibility-card">
+            <div class="eligibility-icon-box gold-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f4c430" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+            </div>
+            <div class="eligibility-content">
+              <h3 class="eligibility-card-title">Challenge Scope</h3>
+              <p class="eligibility-card-desc">The ideas should address <strong>industrial or societal challenges</strong> through <strong>interdisciplinary and cross-functional approaches</strong>.</p>
+            </div>
+          </div>
+
+          <!-- 4. Innovation & Novelty -->
+          <div class="eligibility-card">
+            <div class="eligibility-icon-box emerald-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+                <path d="M9 18h6m-4 3h2"/>
+                <path d="M12 2a7 7 0 0 0-7 7c0 2.5 1.5 4.5 3 6h8c1.5-1.5 3-3.5 3-6a7 7 0 0 0-7-7z"/>
+              </svg>
+            </div>
+            <div class="eligibility-content">
+              <h3 class="eligibility-card-title">Innovation Required</h3>
+              <p class="eligibility-card-desc">The idea <strong>must be innovative</strong> and present a distinct creative solution rather than a replica of existing systems.</p>
+            </div>
+          </div>
+
+          <!-- 5. Commercialisation & Feasibility -->
+          <div class="eligibility-card">
+            <div class="eligibility-icon-box purple-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+              </svg>
+            </div>
+            <div class="eligibility-content">
+              <h3 class="eligibility-card-title">Commercial Potential &amp; Feasibility</h3>
+              <p class="eligibility-card-desc">The idea should demonstrate <strong>potential for commercialisation</strong> along with <strong>technical feasibility, market relevance, affordability, and practical implementation potential</strong>.</p>
+            </div>
+          </div>
+
+          <!-- 6. Technology Readiness Level (TRL) -->
+          <div class="eligibility-card">
+            <div class="eligibility-icon-box teal-box">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+                <polyline points="2 12 12 17 22 12"/>
+              </svg>
+            </div>
+            <div class="eligibility-content">
+              <h3 class="eligibility-card-title">TRL Alignment</h3>
+              <p class="eligibility-card-desc">Ideas should preferably be aligned with <strong>Technology Readiness Level (TRL) 1 to 3</strong> (concept formulation, proof of concept, or analytical/lab validation).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- KEY BENEFITS & HIGHLIGHTS -->
     <section class="benefits-section" id="benefits">
       <div class="section-container">
@@ -424,13 +534,14 @@
             </ul>
           </div>
 
-          <!-- 3. Win exciting awards -->
+          <!-- 3. Advance to Regional Level -->
           <div class="benefit-card tilt-card highlight-benefit">
             <div class="benefit-glow"></div>
             <div class="benefit-icon-box award-box">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2">
-                <circle cx="12" cy="8" r="7"/>
-                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
               </svg>
               <span class="benefit-check red-check">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
@@ -438,68 +549,14 @@
                 </svg>
               </span>
             </div>
-            <div class="corner-ribbon">CSR FUNDED</div>
-            <h3 class="benefit-title">Win Exciting Cash Awards</h3>
+            <h3 class="benefit-title">Advance to Regional Competition</h3>
             <p class="benefit-desc">
-              Compete for generous CSR-sponsored funding grants, seed capital checks, and trophy recognitions to propel your prototype.
+              Winning teams from this institutional round earn the prestigious opportunity to represent S.A. Engineering College at the Regional Level Competition.
             </p>
             <ul class="benefit-points">
-              <li>Direct project funding grant</li>
-              <li>Merit certificates &amp; trophies</li>
-              <li>Hardware component reimbursement</li>
-            </ul>
-          </div>
-
-          <!-- 4. Regional & State Levels -->
-          <div class="benefit-card tilt-card">
-            <div class="benefit-glow"></div>
-            <div class="benefit-icon-box">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <line x1="2" y1="12" x2="22" y2="12"/>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-              <span class="benefit-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-            </div>
-            <h3 class="benefit-title">Compete at Regional &amp; State Levels</h3>
-            <p class="benefit-desc">
-              Top teams get fast-tracked to represent S.A. Engineering College at elite inter-collegiate and national level hackathons.
-            </p>
-            <ul class="benefit-points">
-              <li>Statewide tech showcase</li>
-              <li>Press and media visibility</li>
-              <li>Network with fellow innovators</li>
-            </ul>
-          </div>
-
-          <!-- 5. Incubation & commercialization -->
-          <div class="benefit-card tilt-card">
-            <div class="benefit-glow"></div>
-            <div class="benefit-icon-box">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#8b5cf6" stroke-width="2">
-                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
-                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
-                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
-                <path d="M12 9V4s3.03.55 4 2c1.08 1.62 0 5 0 5"/>
-              </svg>
-              <span class="benefit-check">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="3">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-            </div>
-            <h3 class="benefit-title">Incubation &amp; Commercialization</h3>
-            <p class="benefit-desc">
-              Direct connection with PSG STEP and S.A.E.C. Research Center to turn your academic project into a venture-backed startup.
-            </p>
-            <ul class="benefit-points">
-              <li>Co-working space access</li>
-              <li>Seed investment avenues</li>
-              <li>Company incorporation support</li>
+              <li>Top 1 team advances to Regional Level</li>
+              <li>Official institutional representation</li>
+              <li>Recognition of excellence &amp; awards</li>
             </ul>
           </div>
         </div>
@@ -536,27 +593,27 @@
                 </svg>
               </div>
               <div class="workshop-title-text">
-                <h3 class="workshop-badge-label">IDEA VALIDATION WORKSHOP</h3>
+                <h3 class="workshop-badge-label">IDEA VALIDATION WORKSHOP <span style="font-size: 0.85em; opacity: 0.9;">(Institutional Level)</span></h3>
                 <p class="workshop-date-highlight">Wednesday, 16th September 2026</p>
               </div>
             </div>
 
             <p class="workshop-description">
-              A hands-on preparatory bootcamp designed to help student teams dissect their problem statements, refine their pitch decks, validate prototype viability, and prepare for the final grand jury evaluation.
+              The students who have submitted their ideas will participate in the institution-level ideation workshop. This workshop empowers students to test, refine, and strengthen their ideas with direct guidance from industry experts, identifying promising ideas and guiding them towards further development.
             </p>
 
             <div class="workshop-features">
               <span class="feat-tag">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Pitch Deck Structure
+                Idea Testing &amp; Refinement
               </span>
               <span class="feat-tag">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Mock Pitching &amp; Q&amp;A
+                Industry Expert Guidance
               </span>
               <span class="feat-tag">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-                Industry Mentor Clinics
+                Further Development Roadmap
               </span>
             </div>
           </div>
@@ -581,43 +638,34 @@
             <span>JOURNEY TO REALITY</span>
           </div>
           <h2 class="section-heading">Stages of the Competition</h2>
-          <p class="section-subheading">From raw idea to funded prototype: navigate through the structured phases.</p>
+          <p class="section-subheading">From raw idea to funded prototype: navigate through the structured 3-phase progression.</p>
         </div>
 
         <div class="roadmap-grid">
           <!-- Step 1 -->
           <div class="step-card">
             <div class="step-number">01</div>
-            <div class="step-badge">Phase 1</div>
+            <div class="step-badge">Phase 1 &bull; Institutional Level</div>
             <h3 class="step-title">Online Idea Submission</h3>
-            <p class="step-desc">Register your team, select your technology track, and submit a brief 2-page executive summary or PPT describing the problem and solution.</p>
+            <p class="step-desc">Register your team (max 4 members with at least 1 girl student). Submit innovative ideas addressing industrial or societal challenges aligned with TRL 1 to 3.</p>
             <span class="step-timing">Now Open</span>
           </div>
 
           <!-- Step 2 -->
           <div class="step-card">
             <div class="step-number">02</div>
-            <div class="step-badge emerald-badge">Phase 2</div>
+            <div class="step-badge emerald-badge">Phase 2 &bull; Institutional Level</div>
             <h3 class="step-title">Idea Validation Workshop</h3>
-            <p class="step-desc">Shortlisted teams attend the dedicated mentorship clinic to sharpen technical architecture and business feasibility.</p>
+            <p class="step-desc">Students who submitted ideas participate in this dedicated workshop to test, refine, and strengthen their ideas with hands-on guidance from industry experts.</p>
             <span class="step-timing">Wed, 16 Sep 2026</span>
           </div>
 
-          <!-- Step 3 -->
-          <div class="step-card">
-            <div class="step-number">03</div>
-            <div class="step-badge">Phase 3</div>
-            <h3 class="step-title">Prototype Refinement</h3>
-            <p class="step-desc">Teams build, simulate, or refine their working prototypes with access to campus lab equipment and faculty advisement.</p>
-            <span class="step-timing">Mid-September 2026</span>
-          </div>
-
-          <!-- Step 4 -->
+          <!-- Step 3: Grand Finale -->
           <div class="step-card highlight-step">
-            <div class="step-number red-number">04</div>
-            <div class="step-badge red-badge">Grand Finale</div>
-            <h3 class="step-title">Live Pitch &amp; Awards</h3>
-            <p class="step-desc">Present live before corporate jurors from Atlas Copco, TRIDENT, and PSG STEP at the ECE Seminar Hall to win funding grants.</p>
+            <div class="step-number red-number">03</div>
+            <div class="step-badge red-badge">Phase 3 &bull; Institutional Level</div>
+            <h3 class="step-title">Idea Competition &amp; Grand Finale</h3>
+            <p class="step-desc">Shortlisted teams pitch before expert jurors. Evaluated on innovation, feasibility, impact, and execution. <strong>The top 1 team will be selected to advance to the Regional Competition</strong>.</p>
             <span class="step-timing highlight-timing">Tue, 6 Oct 2026 &bull; 09:30 AM</span>
           </div>
         </div>
@@ -760,17 +808,17 @@
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">
-              <p>The competition is exclusively open to <strong>Pre-final and Final Year Engineering students</strong> across all engineering streams. Interdisciplinary teams combining different departments are strongly encouraged.</p>
+              <p>Students from <strong>Pre-final and Final Year of Engineering programs</strong> across all departments are eligible to participate. Ideas should address industrial or societal challenges through interdisciplinary and cross-functional approaches with potential for commercialisation and TRL 1 to 3 alignment.</p>
             </div>
           </div>
 
           <div class="faq-item">
             <button class="faq-question" type="button">
-              <span>What is the team size requirement?</span>
+              <span>What is the team composition requirement?</span>
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Teams can consist of <strong>2 to 4 members</strong>. Individual entries are also accepted, but collaborating as a multidisciplinary team is recommended for better project execution.</p>
+              <p>Teams can have a <strong>maximum of 4 members</strong>. As a mandatory diversity guideline, <strong>at least one member in every team must be a girl student</strong>.</p>
             </div>
           </div>
 
@@ -786,21 +834,11 @@
 
           <div class="faq-item">
             <button class="faq-question" type="button">
-              <span>What project domains and themes are welcomed?</span>
+              <span>What happens in Phase 2 and Phase 3?</span>
               <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
             </button>
             <div class="faq-answer">
-              <p>Projects across Artificial Intelligence, Robotics &amp; Automation, Clean Energy, Internet of Things (IoT), Healthcare &amp; Assistive Tech, Smart Manufacturing, and Open Track social impact innovations are all welcome.</p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" type="button">
-              <span>What is the Idea Validation Workshop?</span>
-              <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-            </button>
-            <div class="faq-answer">
-              <p>Held on <strong>Wednesday, 16th September 2026</strong>, this dedicated preparatory session allows teams to consult directly with industry specialists to polish their ideas, validate their tech stack, and structure their pitch slides prior to the Grand Finale.</p>
+              <p>In <strong>Phase 2 (Idea Validation Workshop)</strong>, students who submitted ideas attend an institution-level workshop on 16 Sep 2026 to test and refine their concepts with industry experts. In <strong>Phase 3 (Idea Competition & Grand Finale)</strong> on 6 Oct 2026, shortlisted teams pitch to a jury to win funding grants, and the <strong>top 1 team advances to the Regional Competition</strong>.</p>
             </div>
           </div>
         </div>
@@ -825,13 +863,13 @@
             </div>
           </div>
           <div class="cta-strip-action">
-            <button type="button" class="btn-strip-register register-trigger-btn" onclick="openRegistrationModal()">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc44ZBiN8AE_ZlQ-Z70_1OeTWqIRuYqx6yubgGWdtwPnJyOsA/viewform" target="_blank" rel="noopener noreferrer" class="btn-strip-register register-trigger-btn" title="Event Registration (Google Form)">
               <span>REGISTER NOW</span>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>
               </svg>
-            </button>
+            </a>
           </div>
         </div>
       </div>

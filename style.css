@@ -1134,6 +1134,95 @@ body {
 }
 
 /* ===================================================================
+   5B. ELIGIBILITY CRITERIA SECTION (OFFICIAL CSR GUIDELINES)
+   =================================================================== */
+.eligibility-section {
+  padding: 4.5rem 0;
+  position: relative;
+  z-index: 2;
+  background: rgba(3, 7, 18, 0.4);
+}
+
+.eligibility-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.eligibility-card {
+  background: var(--bg-glass-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.eligibility-card:hover {
+  background: rgba(15, 43, 92, 0.65);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.6);
+}
+
+.highlight-eligibility {
+  border-color: rgba(217, 4, 41, 0.45);
+  background: linear-gradient(145deg, rgba(217, 4, 41, 0.12) 0%, rgba(10, 25, 47, 0.8) 100%);
+}
+
+.highlight-eligibility:hover {
+  border-color: var(--color-crimson-bright);
+}
+
+.eligibility-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+  transition: transform var(--transition-bounce);
+}
+
+.eligibility-card:hover .eligibility-icon-box {
+  transform: scale(1.08) rotate(4deg);
+}
+
+.blue-box { background: rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.35); }
+.red-box { background: rgba(217, 4, 41, 0.15); border-color: rgba(217, 4, 41, 0.35); }
+.gold-box { background: rgba(244, 196, 48, 0.15); border-color: rgba(244, 196, 48, 0.35); }
+.emerald-box { background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.35); }
+.purple-box { background: rgba(139, 92, 246, 0.15); border-color: rgba(139, 92, 246, 0.35); }
+.teal-box { background: rgba(6, 182, 212, 0.15); border-color: rgba(6, 182, 212, 0.35); }
+
+.eligibility-card-title {
+  font-family: var(--font-display);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 0.35rem;
+}
+
+.eligibility-card-desc {
+  font-size: 0.9rem;
+  color: var(--text-gray-300);
+  line-height: 1.55;
+}
+
+.eligibility-card-desc strong {
+  color: var(--text-white);
+}
+
+/* ===================================================================
    6. KEY BENEFITS & HIGHLIGHTS (3D TILT CARDS)
    =================================================================== */
 .benefits-section {
@@ -1425,8 +1514,8 @@ body {
 
 .roadmap-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
   position: relative;
 }
 
@@ -2518,6 +2607,10 @@ body {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .eligibility-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .benefits-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -2616,6 +2709,10 @@ body {
   }
 
   .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eligibility-grid {
     grid-template-columns: 1fr;
   }
 
