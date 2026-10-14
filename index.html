@@ -57,6 +57,7 @@
       <ul class="nav-menu" id="navMenu">
         <li><a href="#hero" class="nav-link">Home</a></li>
         <li><a href="#about" class="nav-link">Partners</a></li>
+        <li><a href="#highlights" class="nav-link">Highlights</a></li>
         <li><a href="#details" class="nav-link">Event Details</a></li>
         <li><a href="#eligibility" class="nav-link">Eligibility</a></li>
         <li><a href="#benefits" class="nav-link">Benefits</a></li>
@@ -256,6 +257,13 @@
             <span>BE PART OF DREAM2REALITY &mdash; REGISTER NOW</span>
           </a>
 
+          <a href="#highlights" class="btn-hero-highlight" title="Watch Event Highlights &amp; Aftermovie">
+            <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <span>Watch Event Recap</span>
+          </a>
+
           <button type="button" class="btn-hero-secondary" onclick="openPosterModal()">
             <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
@@ -264,6 +272,100 @@
             </svg>
             <span>View Official Flyer</span>
           </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         EVENT HIGHLIGHTS & RECAP VIDEO SECTION (CSR INITIATIVE SPOTLIGHT)
+         =================================================================== -->
+    <section class="highlights-section" id="highlights">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="pill-title highlights-pill">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            <span>EVENT HIGHLIGHTS &amp; RECAP</span>
+          </div>
+          <h2 class="section-heading">Relive the Energy: Dream2Reality 2026</h2>
+          <p class="section-subheading">Catch inspiring moments, student team pitches, and jury evaluations from our CSR-funded innovation initiative supported by Atlas Copco Group, TRIDENT, and PSG STEP.</p>
+        </div>
+
+        <div class="highlights-showcase">
+          <!-- Glassmorphism Video Player Card -->
+          <div class="highlights-video-card">
+            <!-- 16:9 Responsive Video Viewport -->
+            <div class="highlights-video-container" id="videoContainer">
+              <video id="highlightsVideo" controls playsinline preload="metadata" class="highlights-video-player">
+                <source src="videos/D2Rvideo.mp4" type="video/mp4">
+                <source src="Video/D2Rvideo.mp4" type="video/mp4">
+                <source src="videos/event-recap.mp4" type="video/mp4">
+                <source src="D2Rvideo.mp4" type="video/mp4">
+                Your browser does not support HTML5 video playback.
+              </video>
+              
+              <!-- Partner Watermark Badge -->
+              <div class="highlights-partner-badge">
+                <span class="partner-badge-dot"></span>
+                <span>Supported by Atlas Copco Group &bull; TRIDENT &bull; PSG STEP</span>
+              </div>
+            </div>
+
+            <!-- Video Info & Meta Bar -->
+            <div class="highlights-card-footer">
+              <div class="highlights-info">
+                <h3 class="highlights-title">Dream2Reality Student Innovation &mdash; Official Aftermovie</h3>
+                <p class="highlights-desc">Celebrating engineering ingenuity, prototype demonstrations, and collaborative industry mentorship at S.A. Engineering College (Autonomous).</p>
+              </div>
+              <div class="highlights-tags">
+                <span class="htag">💡 Student Innovation</span>
+                <span class="htag">🏢 CSR Supported</span>
+                <span class="htag">🚀 TRL 1-3 Focus</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Impact Metrics Grid -->
+          <div class="highlights-stats-grid">
+            <div class="hstat-card">
+              <div class="hstat-icon red-glow">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div class="hstat-data">
+                <span class="hstat-value">Grand Finale</span>
+                <span class="hstat-label">Showcase of Top Solutions</span>
+              </div>
+            </div>
+
+            <div class="hstat-card">
+              <div class="hstat-icon gold-glow">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              </div>
+              <div class="hstat-data">
+                <span class="hstat-value">CSR Initiative</span>
+                <span class="hstat-label">Atlas Copco &bull; TRIDENT &bull; PSG STEP</span>
+              </div>
+            </div>
+
+            <div class="hstat-card">
+              <div class="hstat-icon cyan-glow">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </div>
+              <div class="hstat-data">
+                <span class="hstat-value">TRL 1 to 3</span>
+                <span class="hstat-label">Proof of Concept &amp; Prototypes</span>
+              </div>
+            </div>
+
+            <div class="hstat-card">
+              <div class="hstat-icon emerald-glow">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="hstat-data">
+                <span class="hstat-value">Regional Stage</span>
+                <span class="hstat-label">Winner Advances to Next Round</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -808,6 +910,7 @@
         <div class="footer-col">
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links">
+            <li><a href="#highlights">Event Recap &amp; Aftermovie</a></li>
             <li><a href="#hero">Grand Finale Countdown</a></li>
             <li><a href="#details">Event Specifications</a></li>
             <li><a href="#benefits">Award Benefits &amp; Grants</a></li>
